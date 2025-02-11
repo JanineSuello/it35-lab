@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://janinesuello.github.io/IT35-Lab/",
+  "homepage": "https://janinesuello.github.io/IT35-Lab",
   "scripts": {
     "predeploy":"npm run build",
     "deploy":"gh-pages -d dist",
