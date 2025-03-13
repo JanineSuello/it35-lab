@@ -27,17 +27,7 @@ import { useState } from 'react';
     const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     const handleOpenVerificationModal = () => {
-        {/*
-        if (!email.endsWith("@nbsc.edu.ph")) {
-            alert("Only @nbsc.edu.ph emails are allowed to register.");
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            alert("Passwords do not match.");
-            return;
-        }
-        */}
+        
         setShowVerificationModal(true);
     };
 
@@ -62,7 +52,7 @@ import { useState } from 'react';
                 labelPlacement="stacked"
                 fill="outline"
                 type="text"
-                placeholder="Enter a unique username"
+                placeholder="username"
                 value={username}
                 onIonChange={e => setUsername(e.detail.value!)}
             />
@@ -74,7 +64,7 @@ import { useState } from 'react';
                 labelPlacement="stacked" 
                 fill="outline"
                 type="email"
-                placeholder="youremail@nbsc.edu.ph"
+                placeholder="email"
                 value={email}
                 onIonChange={e => setEmail(e.detail.value!)}
             />
@@ -114,7 +104,7 @@ import { useState } from 'react';
                 Register
             </IonButton>
             <IonButton routerLink="/it35-lab" expand="full" fill="clear" shape='round'>
-              Already have an account? Signin
+              Already have an account? Sign-in
             </IonButton>
 
             {/* Verification Modal */}
