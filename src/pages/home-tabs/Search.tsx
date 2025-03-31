@@ -4,6 +4,7 @@ import {
       IonHeader, 
       IonMenuButton, 
       IonPage, 
+      IonSearchbar, 
       IonTitle, 
       IonToolbar 
   } from '@ionic/react';
@@ -20,6 +21,7 @@ import {
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
+        <IonSearchbar value=""></IonSearchbar>
         </IonContent>
       </IonPage>
     );
