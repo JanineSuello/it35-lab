@@ -27,7 +27,7 @@ import {
         <IonContent fullscreen>
 
         <IonCard className="ion-margin-bottom">
-      <img alt="ORV" src="https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/475010814_122122994948676076_7176824817516082766_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeEZI1UIdZOb618N4iS85oPErGSpMxHfuk-sZKkzEd-6T21bptyEPMY5IA0--b1-Fz62TNdJxgA6VgWwW9ATUOf9&_nc_ohc=lZpGzJKBs4wQ7kNvgEMiMLt&_nc_oc=Adhm6PoX3beNBW4XLiPJrcFILoEmodXNNAYQ10V8jjoKGb2RvG34fu-lPL67NzIEolg&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=AdSUdWVdcpChEQ2Fs0P1YLB&oh=00_AYBAnHqWAHa7oCt2aS7sRqOPNrAU73mk_minuFyzjHOJxQ&oe=67CA848A" />
+      <img alt="ORV" src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/484599726_1207791254252131_3575104405568765530_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH9zq7TJgvjm13ND8GNBXd3CWfQex8K3DwJZ9B7HwrcPJMY_D-fQf-FL87Xm4gr2jhi3wRL7mJCEPF_RTpPxciY&_nc_ohc=H53YriJ_r7IQ7kNvgERT3_G&_nc_oc=AdnJfzNHKPU8mFtgrpU5QF0GwAXb0lb_i4oPOwl8sxHyBDgUIx6XzC8LvWIbPWWJ8mE&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=flocW4hwe0tLNErbxn2jog&oh=00_AYFUW73cpVRFiMzucj70AuZPQGvgFI-CC61vQEJhTyYCgw&oe=67F06A9A" />
       <IonCardHeader>
         <IonCardTitle>The Prophet: Omniscient Reader</IonCardTitle>
       </IonCardHeader>
@@ -35,7 +35,7 @@ import {
     </IonCard>
 
     <IonCard>
-      <img alt="SL" src="https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/290905173_10159776384714340_4225162534160083466_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0b6b33&_nc_eui2=AeHMkf5donuu5kd8vigizemV0Mvpd8XxU0TQy-l3xfFTRHB9hblUjnbe1H0p21YV_PQxiuI1NhfRl185iHgVnqo3&_nc_ohc=Mvgc7AfcywgQ7kNvgGTQwoR&_nc_oc=AdhSK19rvDIsYfp_acr_yxHYGADcnbwzgeOR03yNiySF65lVo2sZ6XAhMigBQj97aKA&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=A8SFDDUmZm6bvtzOD145847&oh=00_AYAHyg9E4sbA14Pa943ccII-tSsKS2fCcHsO1B4ZDMQPiw&oe=67CA9026" />
+      <img alt="SL" src="https://imageio.forbes.com/specials-images/imageserve/67bc8ceddfce63fdaf8b75f8/solo-leveling/960x0.jpg?format=jpg&width=1440" />
       <IonCardHeader>
         <IonCardTitle>Solo Leveling</IonCardTitle>
       </IonCardHeader>
@@ -43,7 +43,7 @@ import {
     </IonCard>
 
     <IonCard>
-      <img alt="SL" src="https://scontent.fcgm1-1.fna.fbcdn.net/v/t39.30808-6/472710070_1004323248381339_8002596174401427613_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeE53GbvSDdDNeK01-WOUBTgPKfNCMFmCAQ8p80IwWYIBORyPuqXy6nWwUnr5sm6TuRJtQ_eL0eKLfrU-wr3uUwJ&_nc_ohc=q6VrcMSLjAgQ7kNvgH62O6e&_nc_oc=AdjCwlq4IW37kwIdLQf537Fzbrg6dO5YZTSXjA1w211uWWBwr7VLL_RndVpDjYKmLqo&_nc_zt=23&_nc_ht=scontent.fcgm1-1.fna&_nc_gid=At2VrzL8p27YoPxN9X7gH0F&oh=00_AYBd9CbBh5MPFMufkUPT3kFKSx2y_6MHNuEmk3aeTtCcTg&oe=67CAA3FE" />
+      <img alt="SL" src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/472710070_1004323248381339_8002596174401427613_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeF-m3Cupcwrt-YDqOY1q7I-PKfNCMFmCAQ8p80IwWYIBDAofJJup-9ScLFxawNj8-oNq0AQyVElRfyxgQYxHP8v&_nc_ohc=uukzdlySN74Q7kNvgFpmOUL&_nc_oc=AdmlYIHMcw0mMuGEsWEP0hK_kDqjMn7IsMI9nICNnRj95PveiyF-q7bdy5MhnW2gua8&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=eGnctG-vALwlYbMusvnkOw&oh=00_AYGE8GZjB4_EJ0t5uQKkfwL9Bk3V5BzkQt1yof6w_uKVfg&oe=67F06EFE" />
       <IonCardHeader>
         <IonCardTitle>Solo Leveling</IonCardTitle>
       </IonCardHeader>
