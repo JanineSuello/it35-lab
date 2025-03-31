@@ -18,6 +18,8 @@ import {
   } from '@ionic/react';
 import { useState } from 'react';
 import { supabase } from '../utils/supabaseClient';
+import bcrypt from 'bcryptjs';
+
   
   const Register: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -28,8 +30,21 @@ import { supabase } from '../utils/supabaseClient';
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showVerificationModal, setShowVerificationModal] = useState(false);
     const [showSuccessModal, setShowSuccessModal] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [showAlert, setShowAlert] = useState(false);
 
     const handleOpenVerificationModal = () => {
+        if (!email.endsWith("@nbsc.edu.ph")) {
+            setAlertMessage("Only nbsc insti emails are allowed to register.");
+            setShowAlert(true);
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            setAlertMessage("Passwords do not match.");
+            setShowAlert(true);
+            return;
+        }
         
         setShowVerificationModal(true);
     };
@@ -38,16 +53,13 @@ import { supabase } from '../utils/supabaseClient';
         
         setShowVerificationModal(false);
 
-        // Sign up in Supabase authentication
-
-        const { data, error } = await supabase.auth.signUp({
-            email,password,
-        });
- 
-        if (error) {
-            alert("Account creation failed: " + error.message);
-            return;
-        }
+        try {
+            // Sign up in Supabase authentication
+            const { data, error } = await supabase.auth.signUp({ email, password });
+    
+            if (error) {
+                throw new Error("Account creation failed: " + error.message);
+            }
  
 
         // Hash password before storing in the database
@@ -66,16 +78,24 @@ import { supabase } from '../utils/supabaseClient';
                 user_password: hashedPassword,
             },
         ]);
- 
+
         if (insertError) {
-            alert("Failed to save user data: " + insertError.message);
-            return;
+            throw new Error("Failed to save user data: " + insertError.message);
         }
- 
 
         
         setShowSuccessModal(true);
+        } catch (err) {
+            // Ensure err is treated as an Error instance
+            if (err instanceof Error) {
+                setAlertMessage(err.message);
+            } else {
+                setAlertMessage("An unknown error occurred.");
+            }
+            setShowAlert(true);
+        }
     };
+    
     
     return (
         <IonPage>
