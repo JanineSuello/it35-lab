@@ -46,11 +46,7 @@ import { useState } from 'react';
                        overflow: 'hidden' 
                      }}
                    >
-                      <IonIcon 
-                       icon={logoIonic}
-                       color='primary'
-                       style={{ fontSize: '120px', color: '#6c757d' }} 
-                     />
+                      
                    </IonAvatar>
                    <h1 style={{
                        display: 'flex',
