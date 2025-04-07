@@ -19,6 +19,7 @@ import { Redirect, Route } from 'react-router';
 import Home from './Home';
 import About from './About';
 import Details from './Details';
+import EditProfile from './EditProfile';
 
 const Menu: React.FC = () => {
   const path = [
@@ -26,7 +27,6 @@ const Menu: React.FC = () => {
       {name:'About', url: '/it35-lab/app/about', icon: rocketOutline},
       {name:'Profile', url: '/it35-lab/app/profile', icon: settingsOutline},
     ]
-  
 
   return (
       <IonPage>
@@ -62,7 +62,7 @@ const Menu: React.FC = () => {
                   <Route exact path="/it35-lab/app/home" component={Home} />
                   <Route exact path="/it35-lab/app/home/details" component={Details} />
                   <Route exact path="/it35-lab/app/about" component={About} />
-                  <Route exact path="/it35-lab/app/profile" component={EditProfilePage} />
+                  <Route exact path="/it35-lab/app/profile" component={EditProfile} />
 
 
                   <Route exact path="/it35-lab/app">
