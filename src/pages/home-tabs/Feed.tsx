@@ -12,6 +12,7 @@ import {
       IonTitle, 
       IonToolbar 
   } from '@ionic/react';
+import FeedContainer from '../../components/FeedContainer';
   
   const Feed: React.FC = () => {
     return (
@@ -48,14 +49,15 @@ import {
         <IonCardTitle>Solo Leveling</IonCardTitle>
       </IonCardHeader>
       <IonCardContent>Solo Leveling Season 2 to fully adapt the "Jeju Island Raid" arc‼️‼️‼️
-The upcoming anime season will cover the following story arcs:
-➡️ Red Gate
-➡️ Demon Castle Part 1 & Retesting
-➡️ Hunters Guild & Demon Castle Part 2
-➡️ Jeju Island Raid</IonCardContent>
+                  The upcoming anime season will cover the following story arcs:
+                  ➡️ Red Gate
+                  ➡️ Demon Castle Part 1 & Retesting
+                  ➡️ Hunters Guild & Demon Castle Part 2
+                  ➡️ Jeju Island Raid
+      </IonCardContent>
     </IonCard>
         
-
+      <FeedContainer />
         </IonContent>
       </IonPage>
     );
