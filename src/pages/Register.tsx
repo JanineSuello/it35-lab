@@ -84,7 +84,7 @@ const Register: React.FC = () => {
           padding: '24px',
           borderRadius: '20px',
           boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-          background: '#fff',
+          background: 'rgba(248, 177, 198, 0.8)',
           color: '#333'
         }}>
           <div className="ion-text-center">
