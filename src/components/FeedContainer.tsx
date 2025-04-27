@@ -3,8 +3,7 @@ import {
   IonApp, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonInput,
   IonLabel, IonModal, IonFooter, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle,
   IonCardTitle, IonAlert, IonText, IonAvatar, IonCol, IonGrid, IonRow, IonIcon,
-  IonPopover, IonSpinner, IonToast, IonTextarea,
-  IonSearchbar
+  IonPopover, IonSpinner, IonToast, IonTextarea, IonSearchbar
 } from '@ionic/react';
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../utils/supabaseClient';
@@ -31,11 +30,14 @@ const FeedContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [toastMessage, setToastMessage] = useState('');
   const [popoverState, setPopoverState] = useState<{ open: boolean; event: Event | null; postId: string | null }>({ open: false, event: null, postId: null });
+  
+  // NEW STATE: Reactions per post
+  const [reactions, setReactions] = useState<{ [key: string]: { like: number; heart: number; laugh: number } }>({});
 
   useEffect(() => {
     const fetchUser = async () => {
       const { data: authData } = await supabase.auth.getUser();
-      if (authData?.user?.email?.endsWith('@nbsc.edu.ph')) {
+      if (authData?.user) {
         setUser(authData.user);
         const { data: userData } = await supabase
           .from('users')
@@ -48,9 +50,17 @@ const FeedContainer = () => {
         }
       }
     };
+
     const fetchPosts = async () => {
       const { data } = await supabase.from('posts').select('*').order('post_created_at', { ascending: false });
       setPosts(data || []);
+
+      // Initialize reactions for all posts
+      const initialReactions: { [key: string]: { like: number; heart: number; laugh: number } } = {};
+      (data || []).forEach(post => {
+        initialReactions[post.post_id] = { like: 0, heart: 0, laugh: 0 };
+      });
+      setReactions(initialReactions);
     };
 
     (async () => {
@@ -78,6 +88,10 @@ const FeedContainer = () => {
 
     if (data) {
       setPosts([data[0], ...posts]);
+      setReactions(prev => ({
+        ...prev,
+        [data[0].post_id]: { like: 0, heart: 0, laugh: 0 }
+      }));
       setToastMessage('Post created!');
       setPostContent('');
     }
@@ -113,6 +127,17 @@ const FeedContainer = () => {
     }
   };
 
+  // NEW FUNCTION: Handle Reaction click
+  const handleReaction = (postId: string, type: 'like' | 'heart' | 'laugh') => {
+    setReactions(prev => ({
+      ...prev,
+      [postId]: {
+        ...prev[postId],
+        [type]: prev[postId][type] + 1,
+      },
+    }));
+  };
+
   return (
     <>
       <IonContent fullscreen className="ion-padding">
@@ -120,7 +145,7 @@ const FeedContainer = () => {
           <>
             <IonCard>
               <IonCardHeader>
-              <IonSearchbar></IonSearchbar>
+                <IonSearchbar />
                 <IonCardTitle>Create a Post</IonCardTitle>
               </IonCardHeader>
               <IonCardContent>
@@ -175,11 +200,26 @@ const FeedContainer = () => {
                       </IonCol>
                     </IonRow>
                   </IonCardHeader>
+
                   <IonCardContent>
                     <IonText>
                       <p>{post.post_content}</p>
                     </IonText>
+
+                    {/* REACTIONS */}
+                    <IonRow className="ion-justify-content-center ion-padding-vertical">
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'like')}>
+                        👍 {reactions[post.post_id]?.like || 0}
+                      </IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'heart')}>
+                        ❤️ {reactions[post.post_id]?.heart || 0}
+                      </IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'laugh')}>
+                        😂 {reactions[post.post_id]?.laugh || 0}
+                      </IonButton>
+                    </IonRow>
                   </IonCardContent>
+
                   <IonPopover
                     isOpen={popoverState.open && popoverState.postId === post.post_id}
                     event={popoverState.event}
@@ -197,6 +237,7 @@ const FeedContainer = () => {
         )}
       </IonContent>
 
+      {/* MODAL for editing posts */}
       <IonModal isOpen={isModalOpen} onDidDismiss={() => setIsModalOpen(false)}>
         <IonHeader>
           <IonToolbar>
@@ -217,6 +258,7 @@ const FeedContainer = () => {
         </IonFooter>
       </IonModal>
 
+      {/* Toast Message */}
       <IonToast
         isOpen={!!toastMessage}
         onDidDismiss={() => setToastMessage('')}
