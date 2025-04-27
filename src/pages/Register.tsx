@@ -170,6 +170,7 @@ const Register: React.FC = () => {
             fill="clear"
             shape="round"
             className="ion-margin-top"
+            style={{ color: 'black' }}
           >
             Already have an account? Sign in
           </IonButton>

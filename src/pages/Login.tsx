@@ -48,7 +48,7 @@ const Login: React.FC = () => {
       <IonContent
         className="ion-padding"
         style={{
-          background: "url('src\image\j9.jpg') no-repeat center center",
+          background: "url('C:/Users/janin/Downloads/it35-lab/src/image/j9.jpg') no-repeat center center",
           backgroundSize: 'cover'
         }}
       >
@@ -67,6 +67,7 @@ const Login: React.FC = () => {
               User Login
             </h2>
           </div>
+  
           <IonInput
             className="ion-margin-top"
             label="Email"
@@ -89,26 +90,31 @@ const Login: React.FC = () => {
           >
             <IonInputPasswordToggle slot="end" />
           </IonInput>
+  
           <IonButton
             onClick={doLogin}
             expand="block"
             shape="round"
             className="ion-margin-top"
+            color="primary"
           >
             Login
           </IonButton>
-          <IonText className="ion-text-center ion-margin-top" color="medium">
+  
+          <IonText className="ion-text-center ion-margin-top" style={{ color: 'black' }}>
             <p>Don't have an account?</p>
           </IonText>
+  
           <IonButton
             routerLink="/it35-lab/register"
             expand="block"
-            fill="outline"
             shape="round"
-            color="rgba(15, 14, 14, 0.8)"
+            className="ion-margin-top"
+            color="light blue" 
           >
             Register here
           </IonButton>
+  
         </div>
 
         {/* Alerts and Toasts */}
