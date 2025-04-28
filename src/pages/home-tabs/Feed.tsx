@@ -24,7 +24,6 @@ import FeedContainer from '../../components/FeedContainer';
               <IonMenuButton></IonMenuButton>
             </IonButtons>
             <IonTitle>Feed</IonTitle>
-            <IonSearchbar></IonSearchbar>
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
